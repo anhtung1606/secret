@@ -3,55 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Ô Vuông Chính Giữa</title>
-    <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: left;
-      align-items: center;
-      background-color: #f5f5f5; /* nền trang */
-    }
-
-    .center-box {
-      background-color: #fff8b5; /* vàng nhạt */
-      color: #333333; /* chữ đậm hơn nền */
-      padding: 20px;
-      border: 2px solid #e0c000; /* viền nổi bật */
-      border-radius: 8px;
-      font-size: 1.5rem;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      display: inline-block;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* đổ bóng nhẹ */
-    }
-  </style>
-</head>
-<body>
-
-  <div class="center-box">
-    Tớ yêu linh ạ!!, iu nhìuu nhìuuu lắm ạ, linh ráng làm xong bài rồi còn đi chơi với tớ nhée
-  </div>
-  <title>4 Ảnh Full Màn Hình</title>
+  <title>Bố cục ảnh + ô chữ giữa</title>
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
-    html, body {
-      height: 100%;
-      width: 100%;
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: #f5f5f5;
     }
 
     .grid-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-      height: 100vh; /* full chiều cao màn hình */
-      width: 100vw;  /* full chiều rộng màn hình */
+      height: 100%;
+      width: 100%;
     }
 
     .grid-container img {
@@ -59,10 +31,32 @@
       height: 100%;
       object-fit: cover;
     }
+
+    .center-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff5cc; /* vàng nhạt */
+      color: #333; /* chữ màu nổi hơn */
+      padding: 2vw 4vw;
+      font-size: 5vw;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 90vw;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 600px) {
+      .center-box {
+        font-size: 6vw;
+        padding: 3vw 5vw;
+      }
+    }
   </style>
 </head>
 <body>
-
   <div class="grid-container">
     <img src="1.jpeg" alt="Ảnh 1">
     <img src="2.jpeg" alt="Ảnh 2">
@@ -70,5 +64,8 @@
     <img src="4.jpeg" alt="Ảnh 4">
   </div>
 
+  <div class="center-box">
+    Tớ yêu linh lắm, iu siêu nhìu nhìu nhìu, linh ráng làm bài xong sớm điểm cao để còn đi chơi với mình nữa nhée!!
+  </div>
 </body>
 </html>
